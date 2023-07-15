@@ -42,7 +42,7 @@ impl<S: Dialect> crate::SimpleRequest<S> for Request {
 }
 
 /// ABCI result response.
-#[derive(Clone, Debug, Serialize)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct Response {
     /// Block height
     pub height: block::Height,

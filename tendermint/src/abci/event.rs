@@ -1,4 +1,4 @@
-use serde::Serialize;
+use serde::{Deserialize, Serialize};
 
 use crate::prelude::*;
 
@@ -12,7 +12,7 @@ use crate::prelude::*;
 /// be queried using these events.
 ///
 /// [ABCI documentation](https://docs.tendermint.com/master/spec/abci/abci.html#events)
-#[derive(Clone, PartialEq, Eq, Debug, Serialize, Hash)]
+#[derive(Clone, PartialEq, Eq, Debug, Serialize, Deserialize, Hash)]
 pub struct Event {
     /// The kind of event.
     ///
@@ -115,7 +115,7 @@ where
 /// [`Event::new`] for details.
 ///
 /// [ABCI documentation](https://docs.tendermint.com/master/spec/abci/abci.html#events)
-#[derive(Clone, PartialEq, Eq, Debug, Serialize, Hash)]
+#[derive(Clone, PartialEq, Eq, Debug, Serialize, Deserialize, Hash)]
 pub struct EventAttribute {
     /// The event key.
     pub key: String,
